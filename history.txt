@@ -1,5 +1,8 @@
 The intent of this app is to display stocks and allow virtual purchases. Plans for the future
-are to change the UI to an analogous kid friendly UI to facilitate financial education.
+are to change the UI to an analogous kid friendly UI to facilitate financial education. This is
+a mobile application and will use Flutter for the frontend and will likely use PostgreSQL as the
+database due to the relational nature of querying stock data. I will likely use flask as the backend
+library, and I need to find a live stock info API.
 
 Requirements:
 A home screen displaying "purchased" stocks and how they are doing
@@ -16,10 +19,9 @@ Navigation
 Login/Registration
 
 Implementation Plan:
-Implementing the UI first and then backend separately did not work well in the ReactPhotoBoard, as 
-there would often be late changes in the UI made to accomodate unanticipated backend structures, which
-would result in tangled and messy code. As a result, I will try to implement each requirement of the
-application in a one by one manner, implementing frontend and backend at the same time. 
+I will be implementing the UI first and then later implementing the backend, as done in the ReactPhotoBoard.
+This is so that I can get some development done while putting in more research as to how to construct
+my backend.
 
 The implementation order will start with essential functions first, such as login/registration (every stocks
 transition needs a user id to identify to).
