@@ -1,0 +1,32 @@
+The intent of this app is to display stocks and allow virtual purchases. Plans for the future
+are to change the UI to an analogous kid friendly UI to facilitate financial education.
+
+Requirements:
+A home screen displaying "purchased" stocks and how they are doing
+    The screen should also display the progress of the user's portfolio
+    The user should be able to click on the stocks and be taken to the page where they can see more
+Stock search page
+    The user can search for stocks by their symbols and by the company names
+Stock page
+    This screen should display the progress of the individual stocks
+    This includes graphs, important info, and if the user has a stake in it, how the stake is doing
+    If the user doesn't have a stake, add the option for them to buy it
+Navigation
+    A sidebar to navigate between the pages
+Login/Registration
+
+Implementation Plan:
+Implementing the UI first and then backend separately did not work well in the ReactPhotoBoard, as 
+there would often be late changes in the UI made to accomodate unanticipated backend structures, which
+would result in tangled and messy code. As a result, I will try to implement each requirement of the
+application in a one by one manner, implementing frontend and backend at the same time. 
+
+The implementation order will start with essential functions first, such as login/registration (every stocks
+transition needs a user id to identify to).
+    Implementation order:
+    Login/Registration
+    Stock page
+    Stock search page
+    Home page
+
+Login/Registration implementation
