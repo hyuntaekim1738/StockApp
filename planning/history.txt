@@ -1,0 +1,60 @@
+The intent of this app is to display stocks and allow virtual purchases. Plans for the future
+are to change the UI to an analogous kid friendly UI to facilitate financial education. This is
+a mobile application and will use Flutter for the frontend. 
+Considerations: how will the app access api data (from a socket feeding directly from the api or from the database)
+Database will likely use PostgreSQL as the database instead of local storage, sacrificing faster local time
+for the globability of the database. Users will be able to log in and access their info on any device. 
+Still deciding for the backend server language between dart and python (flask)
+
+App Architecture
+frontend
+Restful API
+Backend server with stock API info
+Database
+
+Functional App Requirements:
+A home screen displaying "purchased" stocks and how they are doing
+    The screen should also display the progress of the user's portfolio
+    The user should be able to click on the stocks and be taken to the page where they can see more
+Stock search page
+    The user can search for stocks by their symbols and by the company names
+Stock page
+    This screen should display the progress of the individual stocks
+    This includes graphs, important info, and if the user has a stake in it, how the stake is doing
+    If the user doesn't have a stake, add the option for them to buy it
+Navigation
+    A sidebar to navigate between the pages
+Login/Registration
+
+Non-functional App Requirements:
+Quick display and access of data
+Keep the app relatively lightweight
+
+
+Backend requirements:
+Info on users
+    Registration info
+    Their stocks
+    Their virtual currency left
+Info on stocks  
+    Current price
+    If the user bought it, when they did (this might require a table join)
+    Stock metrics provided by the API I pick
+Research how the API works: does it maintain a live connection in the application to frequently update
+changes in stock price? Or do I have to actively keep calling for new info?
+
+
+Implementation Plan:
+I will be implementing the UI first and then later implementing the backend, as done in the ReactPhotoBoard.
+This is so that I can get some development done while putting in more research as to how to construct
+my backend.
+
+The implementation order will start with essential functions first, such as login/registration (every stocks
+transition needs a user id to identify to).
+    Implementation order:
+    Login/Registration
+    Stock page
+    Stock search page
+    Home page
+
+Login/Registration implementation
