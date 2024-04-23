@@ -49,12 +49,10 @@ I will be implementing the UI first and then later implementing the backend, as 
 This is so that I can get some development done while putting in more research as to how to construct
 my backend.
 
-The implementation order will start with essential functions first, such as login/registration (every stocks
-transition needs a user id to identify to).
-    Implementation order:
-    Login/Registration
-    Stock page
-    Stock search page
-    Home page
+Home page UI    
+    Needs line graph with different options. Might need a state and logic similar to navigation to get each graph
+    Graph will likely need an outside library
+    Stock purchases of the user
+        A card for each stock that says the stock symbol, company name, and the price change. 
+        Let each card expand and if you click on the stock itself, it will take you to the stock page
 
-Login/Registration implementation

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'home_page/stock_home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -35,7 +36,7 @@ class _MyHomePageState extends State<MyHomePage> {
     Widget page;
     switch (selectedIndex) {
       case 0:
-        page = const Placeholder(); //home page
+        page = const StockHome(); //home page
         break;
       case 1:
         page = const Placeholder(); //search page
