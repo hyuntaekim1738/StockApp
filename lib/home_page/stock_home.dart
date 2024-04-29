@@ -15,7 +15,6 @@ class StockHome extends StatefulWidget {
 //individual stock info
 
 class _StockHome extends State<StockHome> {
-  var selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
     return const Center(
