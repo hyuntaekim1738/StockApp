@@ -8,9 +8,10 @@ class Graph extends StatefulWidget {
   State<Graph> createState() => _Graph();
 }
 
+enum GraphType {day, week, month, sixM, year, ytd, all}
+
 class _Graph extends State<Graph> {
-  var selectedIndex =
-      0; //day, week, month, 6 month, year, ytd, all time (portfolio only)
+  GraphType selectedIndex = GraphType.day; //day, week, month, 6 month, year, ytd, all time (portfolio only)
 
   //initialize list of sample fl spots
   List<FlSpot> daySpots = [
@@ -53,25 +54,25 @@ class _Graph extends State<Graph> {
       const FlSpot(0, 1),
     ];
     switch (selectedIndex) {
-      case 0:
+      case GraphType.day:
         spots = daySpots;
         break;
-      case 1:
+      case GraphType.week:
         spots = weekSpots;
         break;
-      case 2:
+      case GraphType.month:
         spots = monthSpots;
         break;
-      case 3:
+      case GraphType.sixM:
         spots = sixMSpots;
         break;
-      case 4:
+      case GraphType.year:
         spots = yearSpots;
         break;
-      case 5:
+      case GraphType.ytd:
         spots = ytdSpots;
         break;
-      case 6:
+      case GraphType.all:
         spots = allTimeSpots;
         break;
       default:
@@ -114,53 +115,52 @@ class _Graph extends State<Graph> {
               //line chart navigation
               ),
         ),
-        NavigationBar(
-            height: 25,
+        SegmentedButton<GraphType>(
+          style: SegmentedButton.styleFrom(
             backgroundColor: Theme.of(context).colorScheme.onPrimary,
-            onDestinationSelected: (int index) {
-              setState(() {
-                selectedIndex = index;
-              });
-            },
-            indicatorColor: Theme.of(context).colorScheme.inversePrimary,
-            selectedIndex: selectedIndex,
-            destinations: const <Widget>[ //there is too much padding on top and items leak out of the bottom find a way to fix it
-              NavigationDestination(
-                //home navi
-                icon: Icon(Icons.park),
-                label: 'Day',
-              ),
-              NavigationDestination(
-                //search navi
-                icon: Icon(Icons.park),
-                label: 'Week',
-              ),
-              NavigationDestination(
-                //settings navi
-                icon: Icon(Icons.park),
-                label: 'Month',
-              ),
-              NavigationDestination(
-                //settings navi
-                icon: Icon(Icons.park),
-                label: '6M',
-              ),
-              NavigationDestination(
-                //settings navi
-                icon: Icon(Icons.park),
-                label: 'Year',
-              ),
-              NavigationDestination(
-                //settings navi
-                icon: Icon(Icons.park),
-                label: 'YTD',
-              ),
-              NavigationDestination(
-                //settings navi
-                icon: Icon(Icons.park),
-                label: 'All',
-              ),
-            ])
+            selectedBackgroundColor: Theme.of(context).colorScheme.inversePrimary,
+            visualDensity: const VisualDensity(horizontal: -4, vertical: -4),
+            textStyle: DefaultTextStyle.of(context).style.apply(fontSizeFactor: .6),
+          ),
+          segments: const <ButtonSegment<GraphType>>[
+            ButtonSegment<GraphType>(
+                value: GraphType.day,
+                label: Text('D'),
+                icon: Icon(Icons.park)),
+                
+            ButtonSegment<GraphType>(
+                value: GraphType.week,
+                label: Text('W'),
+                icon: Icon(Icons.park)),
+            ButtonSegment<GraphType>(
+                value: GraphType.month,
+                label: Text('M'),
+                icon: Icon(Icons.park)),
+            ButtonSegment<GraphType>(
+                value: GraphType.sixM,
+                label: Text('6M'),
+                icon: Icon(Icons.park)),
+            ButtonSegment<GraphType>(
+                value: GraphType.year,
+                label: Text('Y'),
+                icon: Icon(Icons.park)),
+            ButtonSegment<GraphType>(
+                value: GraphType.ytd,
+                label: Text('YTD'),
+                icon: Icon(Icons.park)),
+            ButtonSegment<GraphType>(
+                value: GraphType.all,
+                label: Text('A'),
+                icon: Icon(Icons.park)),
+          ],
+          selected: <GraphType>{selectedIndex},
+          onSelectionChanged: (Set<GraphType> newSelection) 
+          {
+            setState(() {
+              selectedIndex = newSelection.first;
+            });
+          },
+        ),
       ],
     );
   }
