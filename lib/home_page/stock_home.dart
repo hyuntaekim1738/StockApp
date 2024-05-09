@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import '../shared/graph.dart';
 import '../shared/stock_card.dart';
 
@@ -13,15 +14,21 @@ class StockHome extends StatefulWidget {
 class _StockHome extends State<StockHome> {
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
       children: [
-        Graph(),
-        Padding(
-          padding: EdgeInsets.all(8.0),
-          child: Text("My portfolio"),
-        ),
+        const Graph(),
         Expanded(
-          child: StockCard(),
+          child: ListView(
+            children: const [
+              Padding(
+                padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+                child: Text("My portfolio", textAlign: TextAlign.center),
+              ),
+              StockCard(),
+              StockCard(),
+              StockCard(),
+            ],
+          ),
         ),
       
       ],
