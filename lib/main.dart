@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'home_page/stock_home.dart';
+import 'search_page/search.dart';
 
 void main() {
   runApp(const MyApp());
@@ -39,7 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
         page = const StockHome(); //home page
         break;
       case 1:
-        page = const Placeholder(); //search page
+        page = const Search(); //search page
         break;
       case 2:
         page = const Placeholder(); //settings/user page
