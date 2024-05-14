@@ -74,6 +74,22 @@ class StockInfo extends StatelessWidget {
             ],
           ),
         ),
+        Row(
+          children: [
+            ElevatedButton(
+              child: const Text("Buy"),
+              onPressed: (){
+
+              }
+            ),
+            ElevatedButton( //make it so that this one only appears if the user already owns it
+              child: const Text("Sell"),
+              onPressed: (){
+
+              }
+            )
+          ],
+        ),
         ElevatedButton(
           child: const Icon(Icons.arrow_back_ios),
           onPressed: () {

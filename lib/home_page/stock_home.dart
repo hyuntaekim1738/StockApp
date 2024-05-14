@@ -3,7 +3,7 @@ import 'package:flutter/widgets.dart';
 import '../shared/graph.dart';
 import '../shared/stock_card.dart';
 
-class StockHome extends StatefulWidget {
+class StockHome extends StatefulWidget { //might change to stateless
   const StockHome({super.key});
   @override
   State<StockHome> createState() => _StockHome();

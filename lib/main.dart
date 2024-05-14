@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'home_page/stock_home.dart';
 import 'search_page/search.dart';
+import 'settings_page/settings.dart';
+import 'settings_page/user.dart';
 
 void main() {
   runApp(const MyApp());
@@ -43,7 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
         page = const Search(); //search page
         break;
       case 2:
-        page = const Placeholder(); //settings/user page
+        page = const Settings(); //settings/user page
         break;
       default:
         throw UnimplementedError('no widget for $selectedIndex');
