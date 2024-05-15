@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'home_page/stock_home.dart';
 import 'search_page/search.dart';
 import 'settings_page/settings.dart';
-import 'settings_page/user.dart';
+import 'auth_page/login.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.lightGreen),
         useMaterial3: true,
       ),
-      home: const MyHomePage(),
+      home: const Login(),//MyHomePage(),
     );
   }
 }
@@ -52,7 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
     }
 
     return Scaffold(
-      //pages
+      // pages
       body: page,
       //navigation bar
       bottomNavigationBar: NavigationBar(

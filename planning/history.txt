@@ -1,14 +1,17 @@
-The intent of this app is to display stocks and allow virtual purchases. Plans for the future
+The intent of this app is to display stocks and allow virtual purchases with virtual money. Plans for the future
 are to change the UI to an analogous kid friendly UI to facilitate financial education. This is
 a mobile application and will use Flutter for the frontend. 
-Considerations: how will the app access api data (from a socket feeding directly from the api or from the database)
+
+A NoSQL database may still work, as we are not having to store stock info, but user specific stock info. 
+Research for a thorough understanding of SQL joins to see if SQL is necessary
+
 Database will likely use PostgreSQL as the database instead of local storage, sacrificing faster local time
 for the globability of the database. Users will be able to log in and access their info on any device. 
 Still deciding for the backend server language between dart and python (flask)
 
 App Architecture
 frontend
-Restful API
+Restful API, maybe use firebase for authorization
 Backend server with stock API info
 Database
 
@@ -49,10 +52,4 @@ I will be implementing the UI first and then later implementing the backend, as 
 This is so that I can get some development done while putting in more research as to how to construct
 my backend.
 
-Home page UI    
-    Needs line graph with different options. Might need a state and logic similar to navigation to get each graph
-    Graph will likely need an outside library
-    Stock purchases of the user
-        A card for each stock that says the stock symbol, company name, and the price change. 
-        Let each card expand and if you click on the stock itself, it will take you to the stock page
 
